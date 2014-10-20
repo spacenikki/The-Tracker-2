@@ -1,0 +1,111 @@
+<!-- <h1>Cars#index</h1>
+<h2>User want to see his rental car points!</h2>
+ -->
+<head>
+  <meta charset="utf-8">
+  <title>jQuery UI Effects - Toggle Demo</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+</head>
+<style type="text/css">
+  #toggle_cr {
+    width: 1000px;
+    float:left;
+    padding:8px;
+    margin:16px;
+    /*border:1px solid red;*/
+    background-color: LAVENDER;
+    color:white;
+  }
+
+</style>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#toggle_cr').hide() // div is hidden by default
+
+    $('#add_cr').click(function(e){
+      $('#toggle_cr').slideToggle('slow');
+      e.preventDefault();
+      // return false;
+    });
+});
+</script>
+
+<body>
+<div class='row'>
+	<h4 class='success'><%= flash[:success] %></h4>
+	<h3><%= @welcome_msg %></h3>
+	<!-- add Hotel Rewards Points Now! -->
+	<!-- jquery! when 'add_hr' is click. show/ toggle the toggle_hr div -->
+	<button id='add_cr' class='btn btn-default'>Add Car Rewards Points Now!</button>
+	<div id='toggle_cr' class='submitted_form'>
+		<form action="/cars/add_cr" method="post">
+			<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden"/>
+			<input type="hidden" name='car[user_id]'  value='<%= current_user.id %>'>
+			<h3>How would you like to name it ? </h3>
+    		<input type="text" name='car[description]'/> 
+
+		    <h3>Which car rental do you want us to track for you?</h3>
+			<select id='select' name="car[car]">
+				<option value="hertz">Hertz</option>
+				<option value="enterprise">Enterprise</option>
+			</select>
+
+			<h3>Your Hotel Reward No.</h3>
+			<input type="text" name='car[cr_no]'>
+
+			<h3>Your password to this account</h3>
+			<input type="password" name='car[cr_pw]'>
+			<br>
+			<button type='submit' class='btn btn-success'>Submit</button>
+			<button class='btn btn-warning'><a href="/cars">Go back to see summary</a></button>
+		</form>
+	</div>
+
+	<div class="clearfix"></div>  
+	<!-- to fix the following shifting after above div got toggle -->
+	
+	<h4>Summary - Points Tracker</h4>
+	<!-- show all record from model table Hotel -->
+	<!-- use @hr_info.reverse_each to do grab data -->
+	<table class='table'>
+	    <thead>
+	        <tr class="bg-info">
+	          <th>Car Reward Program</th>
+	          <th>Reward No.</th>
+	          <th>Points</th>
+	          <th>Description</th>
+	          <th>Action</th>
+	          <th>Last Updated</th>
+	          <th>Action</th>
+	          
+	        </tr>
+	    </thead>
+
+	    <tbody>
+	    	<% @cr_summary.reverse_each do |detail| %>
+		        <tr class="bg-warning">
+		            <!-- <td><%= detail.id %></td>  debug only -->
+		            <td><%= detail.car %></td>
+		            <td><%= detail.cr_no %></td>
+		            <td><%= detail.cr_point %></td>
+		            <td><%= detail.description %></td>
+		            
+		<!-- both works, one is post another is get -->
+		<!-- for form, normally, u hide id as input within the form, id would not be be included like this... "/hotels/get_hr/<%= detail.id %>"  -->
+			        <form action="/cars/get_cr/<%= detail.id %>" method='post' >
+		            	<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+			            <td><button id='see_summary' class='btn btn-success'>Get Reward Update!</button></td>
+		      		</form>
+					<td><button class='btn btn-primary'><%= detail.updated_at.strftime "%F %H:%M " %></button></td>
+
+		           <td><button id='destroy' class='btn btn-warning'><a href="/cars/destroy/<%= detail.id %>">Delete</a></button></td>
+			       </form>
+		        </tr>
+	        <% end %>
+	    </tbody>  
+	</table>
+</div>
+</body>

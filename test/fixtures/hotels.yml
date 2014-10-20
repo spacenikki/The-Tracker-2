@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hotel: MyText
+  hr_no: MyString
+  hr_pw: MyString
+  hr_point: MyString
+  user_id: 1
+
+two:
+  hotel: MyText
+  hr_no: MyString
+  hr_pw: MyString
+  hr_point: MyString
+  user_id: 1

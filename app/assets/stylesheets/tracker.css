@@ -1,0 +1,44 @@
+/*// Place all the styles related to the Tracker controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+*/
+@import 'bootstrap';
+
+img {
+	border-radius: 150%;
+	width: 200px;
+    height: 200px;
+}
+
+h3 {
+	font-family: sans-serif;
+	color: pink;
+	font-size: 35px;
+}
+
+.heading {
+	color: skyblue;
+	font-size: 25px;
+	padding-bottom: 20px;
+	
+}
+
+#container_body {
+	padding-top: 25px;
+}
+
+.picture {
+	float: left;
+	width: 300px;
+	height: 320px;
+	margin-left: 80px; 
+	/*border-image: ;*/
+}
+
+p .navbar-text {
+	font-size: 12px;
+}
+
+#video {
+	margin-left: 400px;
+}

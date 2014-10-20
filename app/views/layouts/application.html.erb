@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tracker - testing4</title>
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//railsgirls.com/assets/bootstrap-theme.css" />
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <nav class="navbar navbar-blue navbar-fixed-top navbar-default" role="navigation">
+      <div class="container">
+        <a class="navbar-brand" href="/">The Tracker</a>
+        
+    <!-- nav body begins = collapse navbar-collapse -->
+    <!-- watch this https://www.youtube.com/watch?v=qpWlaOeGZ_4  -->
+      <div class="collapse navbar-collapse navHeaderCollapse">
+            <!-- see? things are under list... -->
+            <ul class="nav navbar-nav">
+              <!-- this is to add 'New Idea' under "Nikki's natvigation" -->
+              <!-- simple form here, go to terminal $rake route -> decide which controller, which method to go then -> grab the very left column -> then add '_path' at the end of it  -->
+              <!-- when 'Hotel Rewards' is clicked, send user to /hotels/index -->
+              <li class="active"><%= link_to 'Frequent Flyer Mileage', flights_index_path %></li>
+              <li class="active"><%= link_to 'Hotel Rewards', hotels_index_path %></li>
+              <li class="active"><%= link_to 'Rental Car Rewards', cars_index_path %></li>
+              <li class="active"><button type='button' class="btn btn-primary btn-default navbar-btn"><a id='link' href="mailto:spacenikki@gmail.com">Support</a></button></li> 
+            </ul>
+
+            <p class="navbar-text pull-right">
+
+              <!-- would not show below if user is not signed in! -->
+            <% if user_signed_in? %>
+              Logged in as <strong><%= current_user.email %></strong>.
+              <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+              <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+              <!-- after signing in, have different layout, don't have to create a new layout anymore -->
+              <%# else %>
+                <%#= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+                <%#= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+            <% end %>
+            </p>
+      </div> <!-- end of collapse navbar-collapse -->
+    </div>  <!-- end of container  -->
+
+  <div class='container'>
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></span></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+    <%= yield %>
+  </div>
+  <div class="footer">
+    
+  </div>
+  </nav>
+</body>
+</html>

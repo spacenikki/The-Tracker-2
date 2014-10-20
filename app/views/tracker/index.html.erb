@@ -1,0 +1,40 @@
+<!-- <h1>Tracker#index</h1>
+<p>Find me in app/views/tracker/index.html.erb</p>
+ -->
+<!-- <a href="/users/sign_out" data-method="delete">Log out</a> -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>jQuery UI Effects - Toggle Demo</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+</head>
+
+<%#= @url %>
+<body>
+	<div class='row'>
+		<h3><%= @welcome_msg %></h3>
+		<div id="container_body">
+			<h4 class='success'><%= flash[:success] %></h4>
+			<div class="picture">
+				<h5 class="heading">Frequent Flyer Mileage</h5>
+				<a href="/flights"/><%= image_tag('flight.png', :class=>'img-circle') %></a>
+			</div>
+			
+			<div class="picture">
+				<h5 class="heading">Hotel Rewards</h5>
+				<a href="/hotels"><%=image_tag("hotel.jpg", :class=> "img-circle")%></a>
+			</div>
+			<div class="picture">
+				<h5 class="heading">Rental Car Rewards</h5>
+				<a href="/cars"><%= image_tag('car1.png', :class=>"img-circle") %></a>
+			</div>
+			<div id='video'>	
+				<a href="https://www.google.com/?gws_rd=ssl#q=What+is+reward+program%3F"><p id='know_more'>Don't know what they are? Let's google it!</p></a>
+				<iframe width="382" height="215" src="//www.youtube-nocookie.com/embed/i5mOjsGruPE?rel=0" frameborder="0" allowfullscreen></iframe>
+			</div>
+		</div>
+	</div>
+</body>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  car: MyText
+  cr_no: MyString
+  cr_pw: MyString
+  cr_point: MyString
+  user_id: 1
+
+two:
+  car: MyText
+  cr_no: MyString
+  cr_pw: MyString
+  cr_point: MyString
+  user_id: 1
