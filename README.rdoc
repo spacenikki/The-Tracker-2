@@ -1,4 +1,5 @@
-== README
+It's a web app acts as a dashboard that allows users to get reward update on airline mileage, rental car and hotel.
+
 Build it with Ruby on rails, no scaffolding.  
 Functionality: 
 - Login/ registration
