@@ -1,16 +1,15 @@
-It's a web app acts as a dashboard that allows users to get reward update on airline mileage, rental car and hotel.
+A web application acts as a dashboard that allows users to get reward updates on airline mileage, rental car, and hotel.
 
-Build it with Ruby on rails, no scaffolding.  
+Built with Ruby on Rails with no scaffolding.  
+
 Functionality: 
 - Login/ registration
-- Forget password support (set up mailer with send grid to heroku)
-- Saved user login & encrypted password to database (postgres)
-- Sends GET request to servers of airline/ rental car/ hotel
-- Retrieves and saves data to database (postgres)
-- Displays data on views
-- Embeds youtube video to educate users how to use this web app
-- Used nokogori for web scraping  (I call API for some other projects but not this one - since it will be too straight forward)
-- firebug and fire path from firefox - useful for debugging and web scraping
-
-
-
+- Forget password support (set up mailer with sendgrid to Heroku)
+- Saves user login & encrypted password to database (Postgres)
+- Sends GET request to servers of airline, rental car and hotel 
+- Uses Nokogori for web scraping  (I call API for some other projects but not this one - I want it to be more challenging.)
+- Retrieves and saves reward data to database (Postgres)
+- Displays reward data on views
+- Embeds youtube video for user's education
+- Uses Firebug and fire path from Firefox that are very useful for debugging and web scraping
+- Uses Web Driver Tester -  Mechanize and Watir with headless browser phantom.js
