@@ -4,7 +4,7 @@ Build it with Ruby on rails, no scaffolding.
 Functionality: 
 - Login/ registration
 - Forget password support (set up mailer with send grid to heroku)
-- Saved user login & encrypted password to sql
+- Saved user login & encrypted password to database (postgres)
 - Sent GET request to servers of airline/ rental car/ hotel
 - Retrieve and save data to database (postgres)
 - Display data on views
