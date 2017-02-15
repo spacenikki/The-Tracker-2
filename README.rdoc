@@ -5,10 +5,10 @@ Functionality:
 - Login/ registration
 - Forget password support (set up mailer with send grid to heroku)
 - Saved user login & encrypted password to database (postgres)
-- Sent GET request to servers of airline/ rental car/ hotel
-- Retrieve and save data to database (postgres)
-- Display data on views
-- Embed youtube video to educate users how to use this web app
+- Sends GET request to servers of airline/ rental car/ hotel
+- Retrieves and saves data to database (postgres)
+- Displays data on views
+- Embeds youtube video to educate users how to use this web app
 - Used nokogori for web scraping  (I call API for some other projects but not this one - since it will be too straight forward)
 - firebug and fire path from firefox - useful for debugging and web scraping
 
