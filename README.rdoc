@@ -16,11 +16,8 @@ Built with Ruby on Rails with no scaffolding.
 - Uses Web Driver Tester -  Mechanize and Watir with headless browser phantom.js
 
 # Screenshots
-
 ![2](https://cloud.githubusercontent.com/assets/5422263/25248236/5a73c2f8-25c2-11e7-82fa-44f347991b35.png)
-
 ![3](https://cloud.githubusercontent.com/assets/5422263/25248234/586dd4b2-25c2-11e7-88b8-e72030bf603d.png)
-
 ![1](https://cloud.githubusercontent.com/assets/5422263/25248230/55f5e666-25c2-11e7-856a-05687a981143.png)
+![4](https://cloud.githubusercontent.com/assets/5422263/25248335/b5821fd2-25c2-11e7-881e-0252a68dece5.png)
 
-![project - trackermailer](https://cloud.githubusercontent.com/assets/5422263/25248239/5ca0ddfe-25c2-11e7-937a-a062685f29e4.png)
